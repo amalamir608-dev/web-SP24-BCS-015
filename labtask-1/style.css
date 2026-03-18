@@ -542,4 +542,57 @@ hr{
     color: black;
 }
 
+/*RESPONSIVE DESIGN*/
+@media (max-width: 768px) {
 
+    
+    .navigation-links {
+        display: none;
+    }
+
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    
+    .product-grid {
+        flex-direction: column;
+    }
+
+    .featured-image-1,
+    .featured-image-2 {
+        width: 100%;
+    }
+
+   
+    .product-grid2 {
+        flex-direction: column;
+    }
+
+    .promoimg-1,
+    .promoimg-2,
+    .promoimg-3 {
+        width: 100%;
+    }
+
+    
+    .spotlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    
+    .help-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
