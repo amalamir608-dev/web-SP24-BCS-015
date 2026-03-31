@@ -596,38 +596,3 @@ hr{
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
-.hamburger {
-    display: none;
-    font-size: 22px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-@media (max-width: 768px) {
-
-    .hamburger {
-        display: block;
-    }
-
-    .navigation-links {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        display: none;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 0;
-    }
-
-    .navigation-links ul {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .navigation-links.active {
-        display: flex;
-    }
-}
