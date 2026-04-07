@@ -40,3 +40,23 @@ $(document).ready(function () {
         }
     });
 });
+
+
+$(document).on("click", ".quick-view-btn", function () {
+    $("#modal-title").text($(this).data("title"));
+    $("#modal-desc").text($(this).data("desc"));
+    $("#modal-rating").text("Rating: " + $(this).data("rating"));
+
+    $("#quickViewModal").fadeIn();
+});
+
+// Close Modal
+$(".close-btn").click(function () {
+    $("#quickViewModal").fadeOut();
+});
+
+$(window).click(function (e) {
+    if ($(e.target).is("#quickViewModal")) {
+        $("#quickViewModal").fadeOut();
+    }
+});
