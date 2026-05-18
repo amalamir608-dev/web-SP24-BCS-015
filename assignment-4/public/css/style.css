@@ -1,0 +1,623 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.left-section img {
+    width: 35px;
+    height: auto;
+    padding-left: 10px;
+    margin-right: 15px;
+}
+
+.top-bar {
+    background-color: #f5f5f5;
+    font-size: 12px;
+}
+.top-bar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding:0;
+    margin :0;
+}
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 50px;
+}
+.top-bar a {
+    text-decoration: none;
+    line-height: 1;
+    color: black;
+}
+
+.right-section a {
+    font-weight: bold;
+}
+
+header{
+     position: sticky;
+    top: 0;
+    z-index: 9999;
+    background-color: white;
+}
+
+.main-navigation-bar .container {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.main-navigation-bar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    
+}
+
+.navigation-links {
+    padding-left: 200px; /*TEMPORRAY FIX WILL BREAK RESPONSIVE BEHAVIOUR*/
+}
+
+.main-navigation-bar a {
+    text-decoration: none;
+    line-height: 1;
+    color: black;
+    font-weight: 550;
+}
+
+.nike-logo img {
+    width: 80px;
+    padding:0 10px;
+    margin-left: 20px;
+}
+
+.search-cart{
+    display: flex;
+    justify-content: center;
+    padding-right: 25px;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-bar {
+        position: relative;
+    }
+.search-bar input {
+        font-size: 12px;
+        border:none;
+        border-radius: 24px;
+        outline: none;
+        background-color: #f5f5f5;
+        padding: 0 20px;
+        height: 35px;
+    }
+
+.search-bar input::placeholder {
+        color: grey;
+        font-weight: bold;
+        font-size: 16px;
+        padding-left:20px;
+    }
+
+.search-bar button {
+        background-color: #f5f5f5;
+        border: none;
+        width: 40px;
+        height: 35px;
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        transition: 0.15s;
+        cursor: pointer;
+        position: absolute;    
+        top: 50%;
+        transform: translateY(-50%);
+    }
+.search-bar img {
+        width: 24px;
+        height: 25px;
+    }
+.search-bar button:hover {
+        background-color: lightgray;
+    }
+
+.heart-icon,
+.cart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.heart-icon img,
+.cart-icon img {
+    width: 24px;
+    height: 25px;
+    cursor: pointer;
+    display: block;
+}
+
+.heart-icon button,
+.cart-icon button{
+    background-color: #fff;
+    border: none;
+    border-radius:50px;
+    transition:0.15s; 
+    padding:4px;
+}
+
+.heart-icon button:hover,
+.cart-icon button:hover {
+background-color: lightgray;
+}
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 700px;
+    display: block;
+    object-fit: cover;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    margin: 0;
+    font-weight: bold;
+    align-items: flex-end;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin: 20px 0;
+    font-weight: bold;
+
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 24px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: background-color 0.15s;
+}
+
+.hero-button:hover {
+    background-color: #C0C0C0;
+}
+
+.product-grid {
+    display:flex;
+    position: relative;
+}
+
+.product-grid img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.featured-image-1,
+.featured-image-2 {
+    position: relative;
+    width: 50%;    
+}
+
+.featured-image-1-content,
+.featured-image-2-content {
+    position: absolute;
+    bottom: 40px;      
+    left: 40px;       
+    transform: none;   
+    text-align: left;  
+    color: white;
+    z-index: 2;
+}
+
+.featured-image-1-content h1,
+.featured-image-2-content h1 {
+    font-size: 25px;
+    margin: 0;
+    font-weight: bold;
+    align-items: flex-end;
+}
+
+.featured-image-1-content p,
+.featured-image-2-content p {
+   font-size: 28px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.featured-image-button1,
+.featured-image-button2 {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 24px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: background-color 0.15s;
+}
+.featured-image-button1:hover,
+.featured-image-button2:hover {
+    background-color:#C0C0C0;
+}
+
+.product-grid2 {
+    display: flex;
+    position: relative;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 30px 30px 30px;
+}
+
+.promoimg-1,
+.promoimg-2,
+.promoimg-3 {
+    position: relative;
+    width: 32%;   
+}
+
+.promoimg-1 img,
+.promoimg-2 img,
+.promoimg-3 img{
+   display: block;
+    width: 100%;
+}
+
+.promoimg-button1,
+.promoimg-button2,
+.promoimg-button3 {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: background-color 0.15s;
+    bottom: 40px;
+    left: 40px;
+    transform: none;
+    position: absolute;
+    z-index: 2;
+    
+}
+.promoimg-button1:hover,
+.promoimg-button2:hover, 
+.promoimg-button3:hover {
+    background-color:#C0C0C0;
+}
+
+.spotlight {
+    padding: 80px 0 20px 0;
+    text-align: center;
+}
+
+.spotlight-title {
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: -5px;
+    margin-bottom: 15px;
+}
+
+.spotlight-subtitle {
+    font-size: 18px;
+    color: black;
+    font-weight: 530;
+    margin-bottom: 80px;
+}
+
+.spotlight-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 60px 20px;
+    max-width: 1300px;   
+    margin: 0 auto;     
+}
+    
+
+.spotlight-item {
+    cursor: pointer;
+    transition: transform 0.15s ;
+}
+
+.spotlight-item img {
+    width: 100%;
+    max-width: 70px;
+    margin-bottom: 10px;
+}
+
+.spotlight a{
+    text-decoration: none;
+    color: black;
+    transition: 0.15s;
+    font-weight: 780;
+    font-size: 12px;
+}
+
+.spotlight-item p:hover {
+     color: #7a7a7a;
+     text-shadow: #7a7a7a;
+}
+
+.help-section {
+    padding: 80px 0;
+    text-align: center;
+}
+.help-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.help-nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0px
+}
+
+.help-nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 550;
+    font-size: 16px;
+    transition: 0.15s;
+    letter-spacing: normal;
+}
+
+.help-nav a:hover {
+    color: #7a7a7a;
+    text-shadow: #7a7a7a;
+}
+
+.nike-logo1 img{
+    width: 70%;
+}
+
+
+.help-grid {
+    max-width: 1000px;        
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;  
+   
+             
+}
+
+
+.help-column h4 {
+    font-size: 25px;        
+    font-weight: 350;        
+    margin-bottom: 18px;
+}
+
+
+.help-column ul {
+    list-style: none;
+}
+
+
+.help-column li {
+    margin-top: 45px;
+    margin-bottom: 35px;
+}
+
+
+.help-column a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;          
+    font-weight: 650;       
+    transition: color 0.15s;
+}
+
+.help-column a:hover {
+    color: black;
+}
+
+hr{
+    border:none;
+    height:1px;
+    background-color: lightgray;
+    margin: 0px 45px;
+}
+.footer-links {
+    padding: 70px 45px 30px 45px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 90px;
+    margin-bottom: 50px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.footer-column ul {
+    list-style: none;
+   
+}
+
+.footer-column li {
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #666;
+    font-weight: 700;
+}
+
+.footer-columnRight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.footer-columnRight a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #666;
+    font-weight: 700;
+}
+
+
+.footer-bottom{
+    padding-bottom: 80px;
+}
+
+.footer-left {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.footer-left p {
+    margin: 0;
+    padding-left: 38px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #666;
+    transition: 0.15s;
+}
+
+.footer-left a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 0.15s;
+}
+
+.footer-left p:hover{
+    color: black;
+}
+.footer-left a:hover {
+    color: black;
+}
+.hamburger {
+
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: black;
+
+}
+/*RESPONSIVE DESIGN*/
+@media (max-width: 768px) {
+
+    
+    .navigation-links {
+        display: none;
+    }
+
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    
+    .product-grid {
+        flex-direction: column;
+    }
+
+    .featured-image-1,
+    .featured-image-2 {
+        width: 100%;
+    }
+
+   
+    .product-grid2 {
+        flex-direction: column;
+    }
+
+    .promoimg-1,
+    .promoimg-2,
+    .promoimg-3 {
+        width: 100%;
+    }
+
+    
+    .spotlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    
+    .help-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hamburger {
+
+    display: block;
+
+}
+.navigation-links.active {
+
+        display: block;
+
+    }
+
+    .navigation-links ul {
+
+        flex-direction: column;
+        gap: 20px;
+
+    }
+   
+}
