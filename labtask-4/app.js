@@ -7,7 +7,9 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo").default;
 const flash = require("connect-flash");
 const User = require("./models/user");
-
+require("dotenv").config();
+const jwt = require("jsonwebtoken");
+const Order = require("./models/order");
 
 
 const app = express();
@@ -29,6 +31,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(session({
 
     secret: "nikeSecretKey",
@@ -430,6 +433,243 @@ app.get("/logout", (req, res) => {
     req.session.destroy();
 
     res.redirect("/login");
+
+});
+function verifyToken(req, res, next) {
+
+    const authHeader = req.headers.authorization;
+
+    if(!authHeader) {
+
+        return res.status(401).json({
+
+            message: "Token Missing"
+
+        });
+
+    }
+
+    const token = authHeader.split(" ")[1];
+
+    try {
+
+        const decoded = jwt.verify(
+
+            token,
+
+            process.env.JWT_SECRET
+
+        );
+
+        req.user = decoded;
+
+        next();
+
+    }
+
+    catch(err) {
+
+        return res.status(403).json({
+
+            message: "Invalid Token"
+
+        });
+
+    }
+
+}
+app.post("/api/v1/auth/login", async (req, res) => {
+
+    try {
+
+        const user = await User.findOne({
+
+            email: req.body.email
+
+        });
+
+        if(!user) {
+
+            return res.status(401).json({
+
+                message: "Invalid email"
+
+            });
+
+        }
+
+        const validPassword = await bcrypt.compare(
+
+            req.body.password,
+
+            user.password
+
+        );
+
+        if(!validPassword) {
+
+            return res.status(401).json({
+
+                message: "Invalid password"
+
+            });
+
+        }
+
+        const token = jwt.sign(
+
+            {
+
+                user_id: user._id,
+
+                role: user.role
+
+            },
+
+            process.env.JWT_SECRET,
+
+            {
+
+                expiresIn: "1h"
+
+            }
+
+        );
+
+        res.json({
+
+            token
+
+        });
+
+    }
+
+    catch(err) {
+
+        console.log(err);
+
+        res.status(500).json({
+
+            message: "Server Error"
+
+        });
+
+    }
+
+});
+app.get("/api/v1/products", async (req, res) => {
+
+    try {
+
+        const page = parseInt(req.query.page) || 1;
+
+        const limit = 8;
+
+        const skip = (page - 1) * limit;
+
+        const products = await Product.find()
+            .skip(skip)
+            .limit(limit);
+
+        res.json(products);
+
+    }
+
+    catch(err) {
+
+        console.log(err);
+
+        res.status(500).json({
+
+            message: "Server Error"
+
+        });
+
+    }
+
+});
+app.get("/api/v1/products/:id", async (req, res) => {
+
+    try {
+
+        const product = await Product.findById(req.params.id);
+
+        res.json(product);
+
+    }
+
+    catch(err) {
+
+        console.log(err);
+
+        res.status(500).json({
+
+            message: "Server Error"
+
+        });
+
+    }
+
+});
+app.get("/api/v1/user/profile", verifyToken, async (req, res) => {
+
+    try {
+
+        const user = await User.findById(req.user.user_id)
+            .select("-password");
+
+        res.json(user);
+
+    }
+
+    catch(err) {
+
+        console.log(err);
+
+        res.status(500).json({
+
+            message: "Server Error"
+
+        });
+
+    }
+
+});
+app.post("/api/v1/orders", verifyToken, async (req, res) => {
+
+    try {
+
+        const newOrder = new Order({
+
+            user: req.user.user_id,
+
+            products: req.body.products
+
+        });
+
+        await newOrder.save();
+
+        res.status(201).json({
+
+            message: "Order Created",
+
+            order: newOrder
+
+        });
+
+    }
+
+    catch(err) {
+
+        console.log(err);
+
+        res.status(500).json({
+
+            message: "Server Error"
+
+        });
+
+    }
 
 });
 app.listen(3000, () => {
