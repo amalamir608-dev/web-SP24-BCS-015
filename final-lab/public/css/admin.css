@@ -1,0 +1,215 @@
+body {
+
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 40px;
+
+}
+
+.admin-container {
+
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+
+}
+
+.admin-title {
+
+    font-size: 42px;
+    margin-bottom: 40px;
+
+}
+
+.add-product-btn {
+
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 14px 24px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.2s;
+
+}
+
+.add-product-btn:hover {
+
+    background-color: #333;
+
+}
+
+table {
+
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+thead {
+
+    background-color: black;
+    color: white;
+
+}
+
+th,
+td {
+
+    padding: 18px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+
+}
+
+td img {
+
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+
+}
+
+.edit-btn,
+.delete-btn {
+
+    display: flex;
+    border: none;
+    padding: 10px 18px 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.15s;
+    margin: 20%;
+    
+
+}
+
+.edit-btn {
+    
+    background-color: black;
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+    display: inline-block;
+    
+
+}
+
+.delete-btn {
+
+    background-color: red;
+    color: white;
+    padding: 10px 12px 10px 12px;
+    display: inline-block;
+
+}
+
+.edit-btn:hover {
+
+    opacity: 0.6;
+
+}
+
+.delete-btn:hover {
+
+    opacity: 0.6;
+
+}
+
+.form-container {
+
+    max-width: 500px;
+    margin: auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+
+}
+
+.form-container h1 {
+
+    margin-bottom: 30px;
+
+}
+
+.form-container form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.form-container input {
+
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+
+}
+
+.form-container button {
+
+    padding: 14px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
+.form-container button:hover {
+
+    background-color: #333;
+
+}
+
+.sales-grid {
+
+    display: flex;
+
+    gap: 30px;
+
+    margin-top: 40px;
+
+}
+
+.sales-card {
+
+    flex: 1;
+
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+}
+
+.sales-card h2 {
+
+    margin-bottom: 20px;
+
+    font-size: 28px;
+
+}
+
+.sales-card p {
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+}
